@@ -7,7 +7,7 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent" [ngClass]="{'show': navbarOpen}">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li *ngFor="let items of menuItems" class="nav-link">
-          <a class="nav-link active" aria-current="page" href="#">{{items.linkName}}</a>
+          <a class="nav-link active" aria-current="page" href="view/{{items.linkName}}">{{items.linkName}}</a>
         </li>
 
       </ul>
