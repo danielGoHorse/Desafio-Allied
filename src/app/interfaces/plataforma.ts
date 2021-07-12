@@ -5,5 +5,3 @@ export class Plataforma {
   public descricao!: string;
 
 }
-
-

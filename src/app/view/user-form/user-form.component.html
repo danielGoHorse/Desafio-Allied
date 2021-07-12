@@ -1,0 +1,43 @@
+<form [formGroup]="formulario" (ngSubmit)="onSubmit()" #loginForm="ngForm" >
+  <p-card>
+    <h2>Cadastro de Usuário</h2>
+    <div class="p-fluid p-formgrid p-grid form-group">
+      <div class="p-field p-col-6">
+        <label for="nome">Nome</label>
+        <input  class="form-control" formControlName="nome" id="nome" type="text" pInputText >
+      </div>
+
+      <div class="p-field p-col-6">
+        <label for="email">E-mail</label>
+        <input  class="form-control" formControlName="email" id="email" type="email" pInputText >
+      </div>
+      <div class="p-field p-col-4">
+        <label for="cpf">CPF</label>
+        <input  class="form-control" formControlName="cpf" id="cpf" type="text" pInputText >
+      </div>
+      <div class="p-field p-col-4">
+        <label for="nasc">Nascimento</label>
+        <input  class="form-control" formControlName="nascimento" id="nasc" type="text" pInputText  >
+      </div>
+      <div class="p-field p-col-4">
+        <label for="tel">Telefone</label>
+        <input  class="form-control" formControlName="telefone" id="tel" type="text" pInputText>
+      </div>
+      <div class="p-field p-col-6">
+        <label for="nasc">Plataforma Selecionada</label>
+        <input   formControlName="plataform" id="plataform" type="text"  pInputText readonly>
+      </div>
+      <div class="p-field p-col-6">
+        <label for="tel">Plano Escolhido</label>
+        <input   formControlName="plano" id="plano" type="text" pInputText readonly>
+      </div>
+    </div>
+
+  </p-card>
+  <div class="btn-box">
+    <button pButton pRipple type="submit" label="Finalizar Compra" class="p-button-rounded" [disabled]="loginForm.form.invalid"
+    pTooltip="Verifique se Todos os Campos foram preenchido"></button>
+
+  </div>
+  <p-toast></p-toast>
+</form>

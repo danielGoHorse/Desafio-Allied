@@ -1,0 +1,98 @@
+<div class="title">
+  <h2>Compra Finalizada</h2>
+
+</div>
+<p-card>
+  <h2>Dados da Compra</h2>
+  <div class="p-fluid p-formgrid p-grid form-group">
+    <div class="p-field p-col-6">
+      <label for="nome">Nome</label>
+      <input  class="form-control" name="nome" id="nome" type="text" pInputText [(ngModel)]="user.nome" disabled >
+    </div>
+
+    <div class="p-field p-col-6">
+      <label for="email">E-mail</label>
+      <input  class="form-control" name="email" id="email" type="email" pInputText [(ngModel)]="user.email" disabled>
+    </div>
+    <div class="p-field p-col-4">
+      <label for="cpf">CPF</label>
+      <input  class="form-control" name="cpf" id="cpf" type="text" pInputText [(ngModel)]="user.cpf" disabled>
+    </div>
+    <div class="p-field p-col-4">
+      <label for="nasc">Nascimento</label>
+      <input  class="form-control" name="nasc" id="nasc" type="text" pInputText [(ngModel)]="user.nascimento" disabled>
+    </div>
+    <div class="p-field p-col-4">
+      <label for="tel">Telefone</label>
+      <input  class="form-control" name="tel" id="tel" type="text" pInputText [(ngModel)]="user.telefone" disabled >
+    </div>
+    <div class="p-field p-col-12">
+      <h4>Dados da Plataforma Escolhida</h4>
+     </div>
+
+    <div class="p-field p-col-4">
+      <label for="nasc">Cod. Plataforma</label>
+      <input  class="form-control" name="plataform" id="plataform" type="text" pInputText [(ngModel)]="plataforma.sku" disabled>
+    </div>
+    <div class="p-field p-col-4">
+      <label for="tel">Plataforma</label>
+      <input  class="form-control" name="plano" id="plano" type="text" pInputText [(ngModel)]="plataforma.nome" disabled>
+    </div>
+    <div class="p-field p-col-4">
+      <label for="nasc">Descrição do Item</label>
+      <input  class="form-control" name="plataform" id="plataform" type="text" pInputText [(ngModel)]="plataforma.descricao" disabled>
+    </div>
+    <div class="p-field p-col-12">
+      <h4>Plano Selecionado</h4>
+     </div>
+
+    <div class="p-field p-col-4">
+      <label for="nasc">Cod. do Plano</label>
+      <input  class="form-control" name="plataform" id="plataform" type="text" pInputText [(ngModel)]="selectedPlano.sku" disabled>
+    </div>
+    <div class="p-field p-col-4">
+      <label for="tel">Franquia</label>
+      <input  class="form-control" name="franquia" id="franquia" type="text" pInputText [(ngModel)]="selectedPlano.franquia" disabled>
+    </div>
+    <div class="p-field p-col-4">
+      <label for="tel">Status</label>
+      <input  class="form-control" name="status" id="status" type="text" pInputText [(ngModel)]="selectedPlano.ativo" disabled>
+    </div>
+    <div class="p-field p-col-4">
+      <label for="nasc">Valor do plano</label>
+      <input  class="form-control" name="plataform" id="plataform" type="text" pInputText [(ngModel)]="selectedPlano.valor" disabled>
+    </div>
+
+<div *ngIf="selectedPlano.aparelho">
+  <p-card class="card-equip">
+    <div class="p-fluid p-formgrid p-grid">
+      <div class="p-field p-col-12">
+        <h4>Plano possui equipamento</h4>
+       </div>
+      <div class="p-field p-col-6" >
+        <label for="tel">Equipamento</label>
+        <input  class="form-control" name="apNome" id="apNome" type="text" pInputText [(ngModel)]="selectedPlano.aparelho.nome" disabled>
+      </div>
+      <div class="p-field p-col-6" >
+        <label for="tel">Valor</label>
+        <input  class="form-control" name="apValor" id="apValor" type="text" pInputText [(ngModel)]="selectedPlano.aparelho.valor" disabled>
+      </div>
+      <div class="p-field p-col-6" >
+        <label for="tel">Qtde. de Parcelas</label>
+        <input  class="form-control" name="num" id="num" type="text" pInputText [(ngModel)]="selectedPlano.aparelho.numeroParcelas" disabled>
+      </div>
+      <div class="p-field p-col-6" >
+        <label for="tel">Valor da Parcela</label>
+        <input  class="form-control" name="valorParc" id="valorParc" type="text" pInputText [(ngModel)]="selectedPlano.aparelho.valorParcela" disabled>
+      </div>
+    </div>
+   </p-card>
+</div>
+
+
+
+
+  </div>
+
+</p-card>
+

@@ -1,0 +1,19 @@
+:host ::ng-deep .p-menubar{
+  background-color: #013668 !important;
+  padding-left: 40px;
+}
+
+:host ::ng-deep  .p-menubar .p-menubar-root-list > .p-menuitem > .p-menuitem-link{
+margin-left: 50px;
+}
+
+:host ::ng-deep   .p-menubar .p-menubar-root-list > .p-menuitem > .p-menuitem-link .p-menuitem-text {
+  color: white;
+}
+
+.navbar-brand{
+  text-decoration:none;
+  font-size: large;
+  color: white;
+  padding-left: 40px;
+}

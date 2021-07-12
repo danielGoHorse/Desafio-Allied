@@ -1,10 +1,10 @@
-import { Aparelho } from "./Aparelho";
+import { Aparelho } from "./aparelho";
 
 export class Plano {
 
   public sku!: string;
   public franquia!: string;
   public valor!: string;
-  public aparelhos!: Aparelho;
-  public status!: string;
+  public aparelho!: Aparelho;
+  public ativo!: boolean;
 }

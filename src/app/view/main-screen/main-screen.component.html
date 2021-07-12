@@ -1,0 +1,51 @@
+<form>
+  <p-card header="Selecione Plataforma">
+    <p-dropdown name="plataform" [options]="plataformas" [(ngModel)]="selectedPlataforma" optionLabel="nome"
+      [filter]="true" filterBy="nome" placeholder="Plataformas" (onChange)="dropChange()">
+      <ng-template pTemplate="selectedItem">
+        <div class="plataformas-item plataformas-item-value" *ngIf="selectedPlataforma">
+          <div>{{selectedPlataforma.nome}}&nbsp;&nbsp;-&nbsp;&nbsp;{{selectedPlataforma.descricao}}</div>
+        </div>
+      </ng-template>
+      <ng-template let-plataformas pTemplate="item">
+        <div class="plataformas-item">
+          <div>{{plataformas.nome}}&nbsp;&nbsp;-&nbsp;&nbsp;{{plataformas.descricao}}</div>
+        </div>
+      </ng-template>
+
+    </p-dropdown>
+  </p-card>
+  <p-card>
+    <p-table [value]="planosList" selectionMode="single" [(selection)]="selectedPlano" dataKey="sku"
+      (onRowSelect)="onRowSelect(selectedPlataforma ,selectedPlano ,$event)" (onRowUnselect)="onRowUnselect($event)">
+      <ng-template pTemplate="header">
+        <tr>
+          <th>Cód.</th>
+          <th>Franquia</th>
+          <th *ngIf="this.selectedPlataforma.sku != 'TBT01'">Equipamento</th>
+          <th>Valor</th>
+          <th>Status</th>
+        </tr>
+      </ng-template>
+      <ng-template pTemplate="body" let-planosList>
+        <tr [pSelectableRow]="planosList">
+
+          <td>{{planosList.sku}}</td>
+          <td>{{planosList.franquia}}</td>
+          <td *ngIf="this.selectedPlataforma.sku != 'TBT01'">
+            <b>{{planosList.aparelho.nome}}</b><br>
+            <b>Valor </b>{{planosList.aparelho.valor}}<br>
+            <b>Em até </b>{{planosList.aparelho.numeroParcelas}}<b>X</b><br>
+            <b>De </b>{{planosList.aparelho.valorParcela}}<br>
+          </td>
+          <td>{{planosList.valor}}</td>
+          <td>
+            {{planosList.ativo? 'Ativo': 'Desabilitado'}}
+          </td>
+        </tr>
+      </ng-template>
+    </p-table>
+  </p-card>
+
+</form>
+<p-toast></p-toast>
